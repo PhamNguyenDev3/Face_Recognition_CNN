@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Webcam</title>
+    {% endblock %}
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* Thay đổi font chữ */
+            background-color: #f8f9fa;
+            /* Thay đổi màu nền */
+        }
+
+        .jumbotron {
+            background-color: #343a40;
+            /* Thay đổi màu của jumbotron */
+            color: #ffffff;
+            /* Thay đổi màu chữ của jumbotron */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0;
+            /* Xóa bo tròn của jumbotron */
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+            background-color: #007bff;
+            /* Thay đổi màu nút */
+            border-color: #007bff;
+            font-size: 18px;
+            /* Thay đổi kích thước chữ */
+            padding: 10px 20px;
+            /* Thay đổi kích thước nút */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            /* Thay đổi màu khi hover */
+            border-color: #0056b3;
+        }
+
+        img {
+            max-width: 100%;
+            /* Đảm bảo hình ảnh không vượt quá kích thước của cha */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            /* Căn giữa hình ảnh */
+            border-radius: 10px;
+            /* Thêm bo tròn cho khung camera */
+            border: 5px solid #007bff;
+            /* Thay đổi màu và độ dày đường viền của khung camera */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Thêm hiệu ứng bóng cho khung camera */
+            margin-top: 20px;
+            /* Thêm khoảng cách trên */
+        }
+        .img_item
+        {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 10px;
+            border: 5px solid #007bff;
+        }
+        ul li {
+            list-style: none;
+            display: inline-block;
+        }
+        .main_box
+        {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h2 style="text-align: center;"><b>Face Recognition</b></h2>
+    </div>
+    <div  class="main_box" style="text-align: center;">
+        <img src="{{url_for('video_feed')}}" />
+    </div>
+    <div style="text-align: center;">
+        <a class="btn btn-primary btn-lg" role="button" href="{{url_for('submit')}}">Submit</a>
+    </div>
+</body>
+
+</html>
